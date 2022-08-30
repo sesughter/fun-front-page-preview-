@@ -1,0 +1,390 @@
+
+/* ----- general css ----  */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    color: white;
+}
+
+img{
+    display: block;
+    width: 100%;
+}
+/* ----- End of general css -----  */
+
+
+/* ----- header section -----  */
+section.head-section{
+    background-image: url(./basketball_ring_ball_throw_115025_3840x2160.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    position: relative;
+}
+section::after{
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    opacity: 0.9;
+    z-index: -1;
+    position: absolute;
+}
+header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between ;
+    align-items: center;
+    height: 10%;
+    position: fixed;
+    z-index: 2;
+    background-color: black;
+    opacity: 0.8;
+    border-bottom: 1px solid rgb(54, 54, 53);
+
+}
+header .logo{
+    width: 50%;
+    margin-left: 2em;
+    
+}
+header .logo a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+header nav{
+    width: 50%;
+    margin-right: 2em;
+}
+header nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+header nav li{
+    list-style: none;
+    padding-left: 1em;
+}
+header nav li::after{
+    content: "";
+    background-color: rgb(250, 50, 0);
+    width: 0%;
+    height: 2px;
+    display: block;
+    transition: 0.5s;
+    margin: 1px auto;
+}
+header nav li:hover::after{
+    width: 100%;
+
+}
+header nav a{
+    color:white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+section .header-body{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+section .header-body h1{
+    margin-bottom: 1em;
+    font-size: 2rem;
+}
+section .header-body p{
+    line-height: 1.5em;
+    font-size: 1rem;
+
+}
+section .header-body a{
+    color: aliceblue;
+    text-decoration: none;
+    margin: 1em 0;
+    border: 1px solid white;
+    padding: 0.5em 1em;
+    transition: 0.7s ease-out;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+section .header-body a:hover{
+    background-color: rgb(250, 50, 0);
+    border-color: rgb(250, 50, 0);
+
+}
+#hamburger{
+   display: none;
+}
+
+/* ---- media query for the header and header body ----  */
+@media (max-width:500px){
+   header nav ul{
+    flex-direction: column;
+    justify-content: start;
+    align-items: baseline;
+    background-color:black;
+    height: 90%;
+    width: 50%;
+    position: fixed;
+    top: -100%;
+    margin-bottom: 50em;
+    transition: 1.5s;
+   }
+   header nav{
+    margin: 0;
+    width: 35%;
+    /* border: 1px solid red; */
+   
+   }
+   header nav li{
+   margin-top: 5em;
+   }
+   header .logo{
+   
+    width: 55%;
+   }
+   header .logo a{
+    font-size: 1.0rem;
+   }
+   header{
+    opacity: 0.9;
+    width: 100%;
+    /* border: 1px solid red; */
+   }
+   #ham{
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: white;
+    margin-right: 1em;
+    position: relative;
+   }
+   #ham::after,
+   #ham::before{
+    content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    background-color: white;
+    display: block;
+    left: 0;
+    padding: 0;
+   }
+   #ham::after{
+    top: 7px;
+   }
+   #ham::before{
+    top: -7px;
+   }
+   section #hamburger{
+    cursor: pointer;
+   padding: 10px 0;
+   display: block;
+   width: 10%;
+   }
+   header nav .toggle{
+    top: 0%;
+    background-color: black;
+   }
+}
+
+/* ----- begining of second section -----  */
+
+
+section.second{
+    width: 100%;
+    height: 100vh;
+    color: black;
+    z-index: -1;
+    overflow: hidden;
+}
+section.second .picture-display{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7em;
+    overflow: hidden;
+    transition: 1s;
+}
+
+section.second .box{
+    width: 30%;
+    height: 80%;
+    box-shadow: 10px 10px 5px rgb(136, 125, 125);
+    text-align: center;
+    overflow: hidden;
+    
+  
+}
+section.second .box-scroll{
+    animation: slide 1.5s ease 1;
+}
+
+
+section.second .box-display{
+    height: 80%;
+    /* border: 1px solid red; */
+}
+section.second .box-text{
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+section.second .box a{
+    display: block;
+    height: 100%;
+}
+section.second .box-display img{
+    object-fit: cover;
+    height: 100%;
+    object-position: top;
+    transition: 1.5s;
+}
+section.second .box img:hover{
+    width: 105%;
+    object-fit: cover;
+}
+
+
+@keyframes slide {
+    0%{
+        transform: scale(0, .025);
+    }
+    50%{
+        transform: scale(1, .025);
+    }
+}
+
+@media (max-width:500px){
+    section.second{
+        height: 200vh;
+    }
+    section.second .picture-display{
+        flex-direction: column;
+        margin: 0 auto;
+        height: 100%;
+    }
+    section.second .box{
+        width: 100%;
+        height: 100%;
+    }
+    
+}
+
+/* ------ third section -----  */
+
+section.third{
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section.third .slide-heading{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: rgb(254, 255, 255);
+    
+}
+section.third .bg-slide-show{
+    display:flex;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+section.third .slide-show-1{
+    height: 100%;
+    width: 30%;
+    animation: slide-1 20s ease-in-out infinite ;
+    background-position: 0 20%;
+    background-size: cover;
+    background-image: url(./images/IMG_9705.PNG);
+}
+section.third .slide-show-2{
+    height: 100%;
+    width: 30%;
+    animation: slide-2 20s ease-in-out infinite ;
+    background-position:0 40%;
+    background-image: url(./images/IMG_9828.PNG);
+    background-size: cover;
+}
+section.third .slide-show-3{
+    height: 100%;
+    width: 30%;
+    background-image: url(./images/IMG_9829.PNG);
+    animation: slide-3 20s ease-in-out infinite ;
+    background-position:0px 20% ;
+    background-size: cover;
+}
+
+@keyframes slide-1 {
+    0%{
+       background-image: url(./images/IMG_3894.PNG);
+    }
+    25%{
+        background-image: url(./images/IMG_3895.PNG);
+    }
+    50%{
+        background-image: url(./images/IMG_4130.PNG);
+    }
+    75%{
+        background-image: url(./images/IMG_4131.PNG);
+    }
+}
+
+@keyframes slide-2 {
+    0%{
+        background-image: url(./images/IMG_4132.JPG);
+    }
+    25%{
+        background-image: url(./images/IMG_6317.PNG);
+
+    }
+    50%{
+        background-image: url(./images/IMG_4133.JPG);
+    }
+    75%{
+        background-image: url(./images/IMG_6318.PNG);
+        
+    }
+}
+@keyframes slide-3{
+    0%{
+        background-image: url(./images/IMG_6318\ \(1\).PNG);
+
+    }
+    25%{
+        background-image: url(./images/IMG_6319.PNG);
+    }
+    50%{
+        background-image: url(./images/IMG_6319\ \(1\).PNG);
+
+    }
+    75%{
+        background-image: url(./images/IMG_6321.PNG);
+    }
+}
